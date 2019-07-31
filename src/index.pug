@@ -3,7 +3,14 @@ html
     meta(charset = 'utf-8')
     meta(name='viewport', content="initial-scale=1.0, width=device-width")
     title Webpack app
+    link(rel="stylesheet" type="text/css" href="main.css")
     body
+
+        include components/text-field/text-field.pug
+        div
+            +text-field('Email','Email')
+        div
+            +text-field('Login','Login')
         h1 превед медвед
 
         ol
@@ -15,6 +22,7 @@ html
     p
         | The pipe always goes at the beginning of its own line,
         | not counting indentation. 
+        | пока космические корабли бороздят просторы вселенной
 
     a(href='https://google.com') Google
     |
