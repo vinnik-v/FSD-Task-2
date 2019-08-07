@@ -53,7 +53,7 @@ let conf = {
                   }
                 }
               ]
-            }
+            },
           ],
     },
     resolve: {

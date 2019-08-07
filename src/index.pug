@@ -11,6 +11,16 @@ html
             +text-field('Email','Email')
         div
             +text-field('Login','Login')
+        div
+            +text-field('^','^')
+        br
+        br
+        br
+        
+        include components/dropdown/dropdown.pug
+        div
+            +dropdown('list','list')
+            
         h1 превед медвед
 
         ol
@@ -19,33 +29,33 @@ html
             li Item C
 
 
-    p
-        | The pipe always goes at the beginning of its own line,
-        | not counting indentation. 
-        | пока космические корабли бороздят просторы вселенной
+        p
+            | The pipe always goes at the beginning of its own line,
+            | not counting indentation. 
+            | пока космические корабли бороздят просторы вселенной
 
-    a(href='https://google.com') Google
-    |
-    a(class='button' href='https://google.com') Google
+        a(href='https://google.com') Google
+        |
+        a(class='button' href='https://google.com') Google
 
-    - var hueta = false
-    h1=hueta ? 'sdfs' : 'net'
+        - var hueta = false
+        h1=hueta ? 'sdfs' : 'net'
 
-    input(
-        type='checkbox'
-        name='agreement'
-        checked
-    )
+        input(
+            type='checkbox'
+            name='agreement'
+            checked
+        )
 
 
-    - var classes = ['foo', 'bar', 'baz']
-    a(class=classes)
-    |
-    |
-    //- the class attribute may also be repeated to merge arrays
-    a.bang(class=classes class=['bing'])
-    h1 
-    =classes
-    |
-    br
-    em $ 
+        - var classes = ['foo', 'bar', 'baz']
+        a(class=classes)
+        |
+        |
+        //- the class attribute may also be repeated to merge arrays
+        a.bang(class=classes class=['bing'])
+        h1 
+        =classes
+        |
+        br
+        em $ 

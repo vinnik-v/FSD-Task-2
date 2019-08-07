@@ -1,0 +1,31 @@
+.dropdown-container {
+    display: flex;
+    width: 320px;
+    height: 44px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.dropdown-container:hover,
+.dropdown-container:focus {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+}
+
+.dropdown-text{
+    background-color:transparent;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgba(31, 32, 65, 0.75);
+    width: 276px;
+    display: flex;
+}
+
+.dropdown-object{
+    background-color:transparent;
+    width: 44px;
+    display: flex;
+    justify-content: center; /*Центрирование по горизонтали*/
+    align-items: center;     /*Центрирование по вертикали*/
+    
+}
