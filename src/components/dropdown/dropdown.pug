@@ -1,9 +1,24 @@
-mixin dropdown(name, placeholder)
-    div(class="dropdown-container")
-        div(class="dropdown-text")
-        div(class="dropdown-object")
-            //span(class="dropdown-object-icon")
-            object(type="image/svg+xml" data="fonts/expand_icon.svg")
-        
+mixin dropdown(name)
+    div(class="dropdown")
+        div(class="dropdown__field")
+            div(class="dropdown__field-text")
+                //span(class="dropdown-text__input") 
+                = name
+            div(class="dropdown__field-icon" )
+                //span(class="dropdown-object-icon")
+                object(type="image/svg+xml" data="fonts/expand_icon.svg")
+        div(class="dropdown__content")
+            div(class="dropdown__content-items")
+                div(class="dropdown__content-text") Взрослые
+                div(class="dropdown__content-btns") Привет
+                    div(class="dropdown__content-btn-rectgl")
+            div(class="dropdown__content-items")
+                div(class="dropdown__content-text") Дети
+                div(class="dropdown__content-btns") Привет
+                    div(class="dropdown__content-btn-rectgl") 
+            div(class="dropdown__content-items")
+                div(class="dropdown__content-text") Младенцы
+                div(class="dropdown__content-btns") Привет
+                    div(class="dropdown__content-btn-rectgl") 
             
         

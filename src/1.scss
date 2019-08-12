@@ -7,11 +7,26 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'Conv_Montserrat-Bold';
+	src: url('fonts/Montserrat-Bold.eot');
+	src: local('☺'), url('fonts/Montserrat-Bold.woff') format('woff'), url('fonts/Montserrat-Bold.ttf') format('truetype'), url('fonts/Montserrat-Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 @import 'components/text-field/text-field.scss';
 @import 'components/dropdown/dropdown.scss';
 
 * {
+  margin: 0;
+  padding: 0;
   font-family:'Conv_Montserrat-Regular',Sans-Serif;
   background-color:  rgb(255, 255, 255);
-  font-size: 48px;
+  font-size: 24px;
 };
+
+body {
+	padding: 10px;
+	margin: 10px;
+}
