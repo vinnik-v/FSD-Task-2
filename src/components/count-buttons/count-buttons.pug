@@ -1,0 +1,9 @@
+mixin count-buttons(_id, text)
+    div(class="dropdown__content-items")
+        div(class="dropdown__content-text") 
+            = text
+        div(class="dropdown__content-btns") 
+            div(class="dropdown__content-btns-rectgl" id='dropdown__'+_id+'-count-minus') -
+            div(class="dropdown__content-btns-value" id='dropdown__'+_id+'-count') 
+            div(class="dropdown__content-btns-rectgl" id='dropdown__'+_id+'-count-plus') +
+    

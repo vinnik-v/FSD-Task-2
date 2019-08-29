@@ -15,11 +15,19 @@ html
             +text-field('^','^')
         br
         br
+        h1 превед медвед
         br
         
         include components/dropdown/dropdown.pug
         div
-            +dropdown('Сколько гостей')
+            //- - var listVals = [['adults','Взрослые'],['kids','Дети'],['babies','Младенцы']]
+            //- +dropdown('Сколько гостей', true, listVals)
+            +dropdown('guests')
+
+        br
+        div
+            +dropdown('rooms')
+
             
         h1 превед медвед
 
@@ -59,3 +67,4 @@ html
         |
         br
         em $ 
+    script(src="./main.js")

@@ -1,116 +1,127 @@
+@import '../../components/count-buttons/count-buttons.scss';
+
+.dropdown__content-text,
+.dropdown__content-btns-value,
+.dropdown__footer-apply,
+.dropdown__footer-clear {
+  font-family: 'Conv_Montserrat-Bold', Sans-Serif;
+  text-transform: uppercase;
+  color: #1F2041;
+}
+
 .dropdown {
-    width: 320px;
-    height: 44px;
+  width: 320px;
+  height: 44px;
+}
+
+.dropdown * {
+  background-color: transparent;
 }
 
 .dropdown__field {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    box-sizing: border-box;
-    border-radius: 4px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .dropdown__field:hover,
 .dropdown__field:focus {
-    border: 1px solid rgba(31, 32, 65, 0.5);
-    border-radius: 4px 4px 0px 0px;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-radius: 4px 4px 0px 0px;
 }
 
-.dropdown__field-text{
-    background-color:transparent;
-    width: 276px;
-    display: flex;
-    padding-left: 15px;
-    align-items: center;     /*Центрирование по вертикали*/
-    font-weight:normal;
-    font-size: 14px;
-    color: rgba(31, 32, 65, 0.75);
-}
-
-.dropdown__field-icon{
-    background-color:transparent;
-    width: 44px;
-    display: flex;
-    justify-content: center; /*Центрирование по горизонтали*/
-    align-items: center;     /*Центрирование по вертикали*/
-    
-}
-
-// .dropdown-text__input{
-//     font-weight:normal;
-//     font-size: 14px;
-//     color: rgba(31, 32, 65, 0.75);
+// .dropdown__content:hover .dropdown__fieldё{
+//   border: 1px solid rgba(31, 32, 65, 0.5);
+//   border-radius: 4px 4px 0px 0px;
 // }
 
+
+.dropdown__field-text {
+  width: 276px;
+  display: flex;
+  padding-left: 14px;
+  align-items: center;
+  /*Центрирование по вертикали*/
+  font-weight: normal;
+  font-size: 14px;
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.dropdown__field-icon {
+  width: 44px;
+  display: flex;
+  justify-content: center;
+  /*Центрирование по горизонтали*/
+  align-items: center;
+  /*Центрирование по вертикали*/
+
+}
+
 .dropdown__content {
-    display: none;
-    width: 100%;
-    height: 157px;
-    background: #FFFFFF;
-    /* Dark 50% */
+  display: none;
+  width: 100%;
+  height: 157px;
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  z-index: 1;
+  border-radius: 0px 0px 4px 4px;
+}
 
-    border: 1px solid rgba(31, 32, 65, 0.5);
-    box-sizing: border-box;
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-    z-index: 1;
-    border-radius: 0px 0px 4px 4px;
-  }
+.dropdown__content-items {
+  display: flex;
+  width: 100%;
+  height: 37px;
+}
 
-  .dropdown__content-items {
-    display: flex;
-    width: 100%;
-    height: 37px;
-  }
-  
-  /* Links inside the dropdown */ 
-  .dropdown__content-text {
-    font-family:'Conv_Montserrat-Bold',Sans-Serif;
-    text-transform: uppercase;
-    
-    width: 190px;
-    color: black;
-    padding: 14px;
-    text-decoration: none;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    //justify-content: center; /*Центрирование по горизонтали*/
-    //border-radius: 4px;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown__content-text:hover {background-color: #f1f1f1}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown__content {
-    display: block;
-    position: relative;
-    border-top: 0px;
+/* Links inside the dropdown */
+.dropdown__content-text {
+  width: 192px;
+  color: black;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
 
-  }
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-  }
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown__content {
+  display: block;
+  position: relative;
+  border-top: 0px;
 
-  .dropdown__content-elem {
-    // position: absolute;
-     width: 100px;
-     //height: 30px;
-     background-color: #3e8e41;
-     //left: 808px;
-    // top: 946px;
+}
+.dropdown__footer {
+  margin-top: 8px;
+  padding-left: 14px;
+  display: flex;
+  width: 100%;
+  height: 37px;
+}
 
-    font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center; /*Центрирование по горизонтали*/
+.dropdown__footer-clear {
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 214px;
+  color: rgba(31, 32, 65, 0.5);
+}
 
-    color: rgba(31, 32, 65, 0.5);
-  }
+.dropdown__footer-apply {
+  cursor: pointer;
+  font-size: 12px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #BC9CFF;
+}
+
