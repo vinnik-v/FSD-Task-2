@@ -1,16 +1,15 @@
-include ../../components/count-buttons/count-buttons.pug
 
 mixin dropdown(type)
-    div(class="dropdown")
-        div(class="dropdown__field")
-            div(class="dropdown__field-text")
+    div(class="dropdown" id="dropdown-"+type)
+        div(class="dropdown__field" id="dropdown__field-"+type)
+            div(class="dropdown__field-text" id="dropdown__field-text-"+type)
                 - if (type == 'guests')
                     = 'Сколько гостей'
                 - if (type == 'rooms')
-                    = '2 спальни, 2 кровати...'
+                    = 'Сколько спален'
             div(class="dropdown__field-icon" )
                 object(type="image/svg+xml" data="fonts/expand_icon.svg")
-        div(class="dropdown__content")
+        div(class="dropdown__content" id="dropdown__content-"+type)
             - if (type == 'guests')
                 - var listVals = [['adults','взрослые'],['kids','дети'],['babies','младенцы']]
             - if (type == 'rooms')
@@ -22,19 +21,12 @@ mixin dropdown(type)
                     div(class="dropdown__footer-clear") Очистить
                     div(class="dropdown__footer-apply") Применить
 
-
-//- mixin dropdown(name, btns_needed, listVals)
-//-     div(class="dropdown")
-//-         div(class="dropdown__field")
-//-             div(class="dropdown__field-text")
-//-                 = name
-//-             div(class="dropdown__field-icon" )
-//-                 object(type="image/svg+xml" data="fonts/expand_icon.svg")
-//-         div(class="dropdown__content")
-//-             each val in listVals
-//-                 +count-buttons(val[0],val[1])
-//-             - if (btns_needed) 
-//-                 div(class="dropdown__footer")
-//-                     div(class="dropdown__footer-clear") Очистить
-//-                     div(class="dropdown__footer-apply") Применить
-            
+mixin count-buttons(_id, text)
+    div(class="dropdown__content-items")
+        div(class="dropdown__content-text") 
+            = text
+        div(class="dropdown__content-btns") 
+            div(class="dropdown__content-btns-rectgl" id='dropdown__'+_id+'-count-minus') -
+            div(class="dropdown__content-btns-value" id='dropdown__'+_id+'-count') 
+            div(class="dropdown__content-btns-rectgl" id='dropdown__'+_id+'-count-plus') +
+    
