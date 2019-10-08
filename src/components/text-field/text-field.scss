@@ -24,7 +24,7 @@ input:focus {
     border: 1px solid rgba(31, 32, 65, 0.5);
 }
 
-.text-field::placeholder {
+.text-field::placeholder, #dropdown__field-text-calendar {
     font-weight:normal;
     color: rgba(31, 32, 65, 0.25);
 }

@@ -1,0 +1,73 @@
+
+mixin date-dropdown(type)
+    div(class="dropdown" id="dropdown-"+type)
+        div(class="dropdown__field" id="dropdown__field-"+type)
+            div(class="dropdown__field-text" id="dropdown__field-text-"+type) 
+                ='03.10.2019'
+            div(class="dropdown__field-icon" )
+                object(type="image/svg+xml" data="fonts/expand_icon.svg")
+        div(class="dropdown__content" id="dropdown__content-"+type)
+            div(class="dropdown__content-items")
+                div(class="dropdown__content-text") 
+                    = 'ghtdtkkfg'
+
+                    -var names = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+                    -var days = [30, 31, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 1, 2];
+
+                    .calendar-container
+                    .calendar-header
+                        h1 
+                        | November
+                        button ▾
+                        p 2018
+                    .calendar
+                        - for(i=0;i<7;i++)
+                        span.day-name= names[i]
+
+                        - for(j=0;j<35;j++)
+                        - if(j == 0 || j == 1 || j == 33 || j == 34)
+                            div.day.day--disabled= days[j]
+
+                        - else   
+                            div.day= days[j]
+                        section.task.task--warning Projects
+                        section.task.task--danger Design Sprint
+                        section.task.task--primary Product Checkup 1
+                        .task__detail
+                            h2 Product Checkup 1
+                            p 15-17th November
+                        section.task.task--info Product Checkup 2
+
+//- mixin count-buttons(_id, text)
+//-     div(class="dropdown__content-items")
+//-         div(class="dropdown__content-text") 
+//-             = text
+//-         div(class="dropdown__content-btns") 
+//-             div(class="dropdown__content-btns-rectgl" id='dropdown__'+_id+'-count-minus') -
+//-             div(class="dropdown__content-btns-value" id='dropdown__'+_id+'-count') 
+//-             div(class="dropdown__content-btns-rectgl" id='dropdown__'+_id+'-count-plus') +
+    mixin date-dropdown(type)
+    div(class="dropdown" id="dropdown-"+type)
+        div(class="dropdown__field" id="dropdown__field-"+type)
+            div(class="dropdown__field-text" id="dropdown__field-text-"+type) 
+                    = 'ДД.ММ.ГГГГ'
+            div(class="dropdown__field-icon" )
+                object(type="image/svg+xml" data="fonts/expand_icon.svg")
+        div(class="dropdown__content" id="dropdown__content-"+type)
+            div(class="dropdown__content-items")
+                div(class="dropdown__content-text") 
+                    = 'ghtdtkkfg'
+
+
+    mixin date-dropdown(type)
+    div(class="dropdown" id="dropdown-"+type)
+        div(class="dropdown__field" id="dropdown__field-"+type)
+            input(type="date" value="2017-06-01" class="dropdown__field-text" id="dropdown__field-text-"+type) 
+            
+            div(class="dropdown__field-icon" )
+                object(type="image/svg+xml" data="fonts/expand_icon.svg")
+        div(class="dropdown__content" id="dropdown__content-"+type)
+            div(class="dropdown__content-items")
+                div(class="dropdown__content-text") 
+                    = 'ghtdtkkfg'

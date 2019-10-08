@@ -1,16 +1,17 @@
 
-var guestsCount = 0;
-var babiesCount = 0;
-var bedroomsCount = 0;
-var bedsCount = 0;
-var bathroomsCount = 0;
 
-var dropdownCounts = function (type, val_id) {
+let guestsCount = 0;
+let babiesCount = 0;
+let bedroomsCount = 0;
+let bedsCount = 0;
+let bathroomsCount = 0;
+
+let dropdownCounts = function (type, val_id) {
 
     const elem_id = '#dropdown__' + val_id + '-count';
 
     let defVal = document.querySelector(elem_id);
-    let fieldTextVal = document.querySelector('#dropdown__field-text-'+ type);
+    let fieldTextVal = document.querySelector('#dropdown__field-text-' + type);
     let dropdownContent = document.querySelector('.dropdown__content');
 
     let value = 0;
@@ -51,10 +52,13 @@ var dropdownCounts = function (type, val_id) {
         if (value > 0) {
             minus.classList.remove('dropdown__content-btns-rectgl_light');
         }
-        GuestsFieldText(fieldTextVal, guestsCount, babiesCount);
-        roomsFieldText(fieldTextVal, bedroomsCount, bedsCount);
-
-        if (guestsCount > 0 || babiesCount > 0){
+        if (type == 'guests') {
+            GuestsFieldText(fieldTextVal, guestsCount, babiesCount);
+        }
+        if (type == 'rooms') {
+            roomsFieldText(fieldTextVal, bedroomsCount, bedsCount);
+        }
+        if (guestsCount > 0 || babiesCount > 0) {
             clear.style.visibility = "visible";
         }
     });
@@ -82,22 +86,27 @@ var dropdownCounts = function (type, val_id) {
         if (value == 0) {
             minus.classList.add('dropdown__content-btns-rectgl_light');
         }
-        GuestsFieldText(fieldTextVal, guestsCount, babiesCount);
-        roomsFieldText(fieldTextVal, bedroomsCount, bedsCount);
-
-        if (guestsCount == 0 && babiesCount == 0){
+        if (type == 'guests') {
+            GuestsFieldText(fieldTextVal, guestsCount, babiesCount);
+        }
+        if (type == 'rooms') {
+            roomsFieldText(fieldTextVal, bedroomsCount, bedsCount);
+        }
+        if (guestsCount == 0 && babiesCount == 0) {
             clear.style.visibility = "hidden";
         }
     });
 
     clear.addEventListener('click', function (event) {
-        value = 0;
-        guestsCount = 0;
-        babiesCount = 0;
-        minus.classList.add('dropdown__content-btns-rectgl_light');
-        GuestsFieldText(fieldTextVal, guestsCount, babiesCount);
-        defVal.innerHTML = value;
-        clear.style.visibility = "hidden";
+        if (type == 'guests') {
+            value = 0;
+            guestsCount = 0;
+            babiesCount = 0;
+            minus.classList.add('dropdown__content-btns-rectgl_light');
+            GuestsFieldText(fieldTextVal, guestsCount, babiesCount);
+            defVal.innerHTML = value;
+            clear.style.visibility = "hidden";
+        }
     });
 
     apply.addEventListener('click', function (event) {
@@ -130,7 +139,7 @@ var dropdownCounts = function (type, val_id) {
         if (bedroomsCount > 0 && bedsCount > 0) {
             fieldTextVal.innerHTML = bedroomsCount + wordFormBedrooms(bedroomsCount) + ', ' + bedsCount + wordFormBeds(bedsCount) + '...';
         }
-        if (bedroomsCount == 0){
+        if (bedroomsCount == 0) {
             fieldTextVal.innerHTML = 'Сколько спален';
         }
     }
@@ -167,7 +176,7 @@ var dropdownCounts = function (type, val_id) {
         if (guestsCount > 0 && babiesCount > 0) {
             fieldTextVal.innerHTML = guestsCount + wordFormGuests(guestsCount) + ', ' + babiesCount + wordFormBabies(babiesCount);
         }
-        if (guestsCount == 0){
+        if (guestsCount == 0) {
             fieldTextVal.innerHTML = 'Сколько гостей';
         }
     };
@@ -176,25 +185,27 @@ var dropdownCounts = function (type, val_id) {
 module.exports = function (type) {
 
     if (type == 'guests') {
-        dropdownCounts(type,'adults');
-        dropdownCounts(type,'kids');
-        dropdownCounts(type,'babies');
-        
-        document.querySelector('#dropdown-'+type).style.width = "320px";
-        document.querySelector('#dropdown__content-'+type).style.height = "157px";
+        dropdownCounts(type, 'adults');
+        dropdownCounts(type, 'kids');
+        dropdownCounts(type, 'babies');
+
+        document.querySelector('#dropdown-' + type).style.width = "320px";
+        document.querySelector('#dropdown__content-' + type).style.height = "157px";
+        document.querySelector('#dropdown__field-text-' + type).style.width = (320 - 44) + "px";
     }
 
     if (type == 'rooms') {
-        dropdownCounts(type,'bedrooms');
-        dropdownCounts(type,'beds');
-        dropdownCounts(type,'bath');
+        dropdownCounts(type, 'bedrooms');
+        dropdownCounts(type, 'beds');
+        dropdownCounts(type, 'bath');
 
-        document.querySelector('#dropdown-'+type).style.width = "266px";
-        document.querySelector('#dropdown__content-'+type).style.height = "119px";
+        document.querySelector('#dropdown-' + type).style.width = "266px";
+        document.querySelector('#dropdown__content-' + type).style.height = "119px";
+        document.querySelector('#dropdown__field-text-' + type).style.width = (266 - 44) + "px";
     }
 
-    var dropdownHoverFieldStyle = document.querySelector('#dropdown__content-'+type);
-    var HoverField = document.querySelector('#dropdown__field-'+type);
+    let dropdownHoverFieldStyle = document.querySelector('#dropdown__content-' + type);
+    let HoverField = document.querySelector('#dropdown__field-' + type);
 
     HoverField.addEventListener('mouseover', function (event) {
         dropdownHoverFieldStyle.classList.add('dropdown__content_expanded');

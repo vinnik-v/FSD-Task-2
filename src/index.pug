@@ -27,6 +27,16 @@ html
         br
         div
             +dropdown('rooms')
+        
+        br
+        
+        include components/date-dropdown/date-dropdown.pug
+        div
+            //- - var listVals = [['adults','Взрослые'],['kids','Дети'],['babies','Младенцы']]
+            //- +dropdown('Сколько гостей', true, listVals)
+            +date-dropdown('calendar')
+
+        br
 
             
         h1 превед медвед
