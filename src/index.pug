@@ -15,7 +15,7 @@ html
             +text-field('^','^')
         br
         br
-        h1 превед медвед
+        h1 Test Test
         br
         
         include components/dropdown/dropdown.pug
@@ -38,43 +38,4 @@ html
 
         br
 
-            
-        h1 превед медвед
-
-        ol
-            li Item A
-            li Item B
-            li Item C
-
-
-        p
-            | The pipe always goes at the beginning of its own line,
-            | not counting indentation. 
-            | пока космические корабли бороздят просторы вселенной
-
-        a(href='https://google.com') Google
-        |
-        a(class='button' href='https://google.com') Google
-
-        - var hueta = false
-        h1=hueta ? 'sdfs' : 'net'
-
-        input(
-            type='checkbox'
-            name='agreement'
-            checked
-        )
-
-
-        - var classes = ['foo', 'bar', 'baz']
-        a(class=classes)
-        |
-        |
-        //- the class attribute may also be repeated to merge arrays
-        a.bang(class=classes class=['bing'])
-        h1 
-        =classes
-        |
-        br
-        em $ 
     script(src="./main.js")
