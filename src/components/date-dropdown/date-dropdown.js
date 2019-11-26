@@ -172,31 +172,37 @@
 //         }
 //     };
 // };
+var today = new Date();
+
+var date = today.getDate()+'.'+(today.getMonth()+1)+'.'+today.getFullYear();
+var date1 = today.getMonth();
+console.log(date1);
 
 module.exports = function (type) {
     
-        document.querySelector('#dropdown-'+type).style.width = "150px";
-        document.querySelector('#dropdown__field-text-'+type).style.width = (150-44)+"px";
-        document.querySelector('#dropdown__content-'+type).style.height = "157px";
+    document.querySelector('#dropdown-'+type).style.width = "150px";
+    document.querySelector('#dropdown__field-text-'+type).style.width = (150-44)+"px";
+    document.querySelector('#dropdown__content-'+type).style.height = "369px";
+    document.querySelector('#dropdown__content-'+type).style.width = "320px";
 
     var dropdownHoverFieldStyle = document.querySelector('#dropdown__content-'+type);
     var HoverField = document.querySelector('#dropdown__field-'+type);
 
-    HoverField.addEventListener('mouseover', function (event) {
-        dropdownHoverFieldStyle.classList.add('dropdown__content_expanded');
+    HoverField.addEventListener('click', function (event) {
+        dropdownHoverFieldStyle.classList.add('dropdown__content-calendar');
     });
 
-    HoverField.addEventListener('mouseout', function (event) {
-        dropdownHoverFieldStyle.classList.remove('dropdown__content_expanded');
-    });
+    // HoverField.addEventListener('mouseout', function (event) {
+    //     dropdownHoverFieldStyle.classList.remove('dropdown__content-calendar');
+    // });
 
     dropdownHoverFieldStyle.addEventListener('mouseover', function (event) {
         HoverField.classList.add('dropdownHoverFieldStyle');
-        dropdownHoverFieldStyle.classList.add('dropdown__content_expanded');
+        dropdownHoverFieldStyle.classList.add('dropdown__content-calendar');
     });
 
     dropdownHoverFieldStyle.addEventListener('mouseout', function (event) {
         HoverField.classList.remove('dropdownHoverFieldStyle');
-        dropdownHoverFieldStyle.classList.remove('dropdown__content_expanded');
+        dropdownHoverFieldStyle.classList.remove('#dropdown__content-calendar');
     });
 };
