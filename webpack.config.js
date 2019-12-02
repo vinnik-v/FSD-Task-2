@@ -1,4 +1,5 @@
 let path = require('path');
+let webpack = require('webpack');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -15,22 +16,10 @@ let conf = {
     },
     module: {
         rules: [
-            // { 
-            //     test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" 
-            // },
             { 
                 test: /\.pug$/,
                 use: ['pug-loader']
-              },
-            // {
-            //   test: /\.css$/,
-            //   use: [
-            //     { 
-            //         loader: MiniCssExtractPlugin.loader,
-            //     },
-            //     'css-loader',
-            //   ],
-            // },
+            },
             {
               test: /\.s(a|c)ss$/,
               loader: [
@@ -63,6 +52,10 @@ let conf = {
       extensions: ['.js', '.jsx', '.scss']
     },
     plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery'
+      }),
       new MiniCssExtractPlugin({
         filename: '[name].css',
         chunkFilename: '[id].css'

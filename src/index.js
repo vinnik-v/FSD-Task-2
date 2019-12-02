@@ -9,3 +9,13 @@ dropdown('rooms');
 dateDropdown('calendar');
 
 
+// module.exports = {
+//     plugins: [
+//       new webpack.ProvidePlugin({
+//         $: 'jquery',
+//         jQuery: 'jquery'
+//       }),
+//     ]
+//   };
+
+  $( "button.continue" ).html( "Next Step..." )

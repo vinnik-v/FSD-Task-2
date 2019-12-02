@@ -122,22 +122,11 @@ button:focus {
   position: absolute;
   margin: 0 auto;
   display: inline-block;
-  //border-radius: 50% 0 0 50%;
   width: 40px;
   height: 40px;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   opacity: 0.25;
 }
-
-// .calendar-date-grid__cover-area {
-//   border-left-color: #fdb44d;
-//   grid-column: 4 / span 3;
-//   grid-row: 3;
-//   background: #fef0db;
-//   align-self: center;
-//   color: #fc9b10;
-//   margin-top: -5px;
-// }
 
 .calendar-date-grid__button-text_light time {
   color: rgba(31, 32, 65, 0.25);
