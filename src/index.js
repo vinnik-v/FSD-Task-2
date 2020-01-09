@@ -8,14 +8,19 @@ dropdown('rooms');
 
 dateDropdown('calendar');
 
+$( document ).ready(function() {
+ 
+    // function Person(first, last, age, gender, interests) {
+  
+    //     // property and method definitions
+    //     this.first = first;
+    //     this.last = last;
+    //   //...
+    //   }
 
-// module.exports = {
-//     plugins: [
-//       new webpack.ProvidePlugin({
-//         $: 'jquery',
-//         jQuery: 'jquery'
-//       }),
-//     ]
-//   };
+    //   var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
 
-  $( "button.continue" ).html( "Next Step..." )
+    //   console.log(person1.this)
+ 
+});
+

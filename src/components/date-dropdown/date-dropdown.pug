@@ -4,7 +4,7 @@ mixin date-dropdown(type)
     div(class="dropdown" id="dropdown-"+type)
         div(class="dropdown__field" id="dropdown__field-"+type)
             div(class="dropdown__field-text" id="dropdown__field-text-"+type) 
-                = "currentDate"
+                //= "currentDate"
             div(class="dropdown__field-icon" )
                 object(type="image/svg+xml" data="fonts/expand_icon.svg")
         div(class="dropdown__content" id="dropdown__content-"+type)
@@ -18,12 +18,12 @@ mixin date-dropdown(type)
                     .calendar-container
                         .calendar-header
                             button(class = "calendar-header__button")
-                                i(class="material-icons calendar-header__arrow") arrow_back
+                                i(class="material-icons calendar-header__arrow" id="calendar-header__arrow-left") arrow_back
                                 //object(type="image/svg+xml" data="fonts/ic_arrow_back_24px.svg" class="calendar-header__arrow")
                             .calendar-header__month-year
-                                ="Август 2019"
+                                //="Август 2019"
                             button(class = "calendar-header__button")
-                                i(class="material-icons calendar-header__arrow") arrow_forward
+                                i(class="material-icons calendar-header__arrow" id="calendar-header__arrow-right") arrow_forward
                                 //object(type="image/svg+xml" data="fonts/ic_arrow_forward_24px.svg" class="calendar-header__arrow")
                         .calendar-grid-container
                             .day-of-week
